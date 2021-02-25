@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58626E9F25E80D2E001560D8 /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58626E9E25E80D2E001560D8 /* TaskDelegate.swift */; };
 		58B0991925DECC8600604147 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B0991825DECC8600604147 /* AppDelegate.swift */; };
 		58B0991B25DECC8600604147 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B0991A25DECC8600604147 /* SceneDelegate.swift */; };
 		58B0991D25DECC8600604147 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B0991C25DECC8600604147 /* ViewController.swift */; };
@@ -14,9 +15,15 @@
 		58B0992325DECC8600604147 /* ToDoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 58B0992125DECC8600604147 /* ToDoList.xcdatamodeld */; };
 		58B0992525DECC8700604147 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58B0992425DECC8700604147 /* Assets.xcassets */; };
 		58B0992825DECC8700604147 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58B0992625DECC8700604147 /* LaunchScreen.storyboard */; };
+		58B0993025DED2D400604147 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B0992F25DED2D400604147 /* Task.swift */; };
+		58B0993225DED42300604147 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B0993125DED42300604147 /* App.swift */; };
+		58B0993425DEDB6A00604147 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B0993325DEDB6A00604147 /* TaskViewController.swift */; };
+		58B0993625DEDCF300604147 /* UIItemTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B0993525DEDCF300604147 /* UIItemTask.swift */; };
+		58B0993825DEDDC200604147 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B0993725DEDDC200604147 /* Checkbox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		58626E9E25E80D2E001560D8 /* TaskDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDelegate.swift; sourceTree = "<group>"; };
 		58B0991525DECC8600604147 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58B0991825DECC8600604147 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58B0991A25DECC8600604147 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +33,11 @@
 		58B0992425DECC8700604147 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58B0992725DECC8700604147 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58B0992925DECC8700604147 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58B0992F25DED2D400604147 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		58B0993125DED42300604147 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		58B0993325DEDB6A00604147 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		58B0993525DEDCF300604147 /* UIItemTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIItemTask.swift; sourceTree = "<group>"; };
+		58B0993725DEDDC200604147 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,14 +72,44 @@
 			children = (
 				58B0991825DECC8600604147 /* AppDelegate.swift */,
 				58B0991A25DECC8600604147 /* SceneDelegate.swift */,
-				58B0991C25DECC8600604147 /* ViewController.swift */,
+				58B0993A25DEDE3C00604147 /* Controllers */,
 				58B0991E25DECC8600604147 /* Main.storyboard */,
 				58B0992425DECC8700604147 /* Assets.xcassets */,
 				58B0992625DECC8700604147 /* LaunchScreen.storyboard */,
 				58B0992925DECC8700604147 /* Info.plist */,
 				58B0992125DECC8600604147 /* ToDoList.xcdatamodeld */,
+				58B0993B25DEDE5B00604147 /* Objetos */,
+				58B0993925DEDE1500604147 /* UIComponents */,
 			);
 			path = ToDoList;
+			sourceTree = "<group>";
+		};
+		58B0993925DEDE1500604147 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				58B0993525DEDCF300604147 /* UIItemTask.swift */,
+				58B0993725DEDDC200604147 /* Checkbox.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		58B0993A25DEDE3C00604147 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				58B0991C25DECC8600604147 /* ViewController.swift */,
+				58B0993325DEDB6A00604147 /* TaskViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		58B0993B25DEDE5B00604147 /* Objetos */ = {
+			isa = PBXGroup;
+			children = (
+				58B0992F25DED2D400604147 /* Task.swift */,
+				58626E9E25E80D2E001560D8 /* TaskDelegate.swift */,
+				58B0993125DED42300604147 /* App.swift */,
+			);
+			path = Objetos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,7 +184,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				58B0991D25DECC8600604147 /* ViewController.swift in Sources */,
+				58B0993425DEDB6A00604147 /* TaskViewController.swift in Sources */,
+				58B0993825DEDDC200604147 /* Checkbox.swift in Sources */,
 				58B0991925DECC8600604147 /* AppDelegate.swift in Sources */,
+				58B0993625DEDCF300604147 /* UIItemTask.swift in Sources */,
+				58626E9F25E80D2E001560D8 /* TaskDelegate.swift in Sources */,
+				58B0993025DED2D400604147 /* Task.swift in Sources */,
+				58B0993225DED42300604147 /* App.swift in Sources */,
 				58B0991B25DECC8600604147 /* SceneDelegate.swift in Sources */,
 				58B0992325DECC8600604147 /* ToDoList.xcdatamodeld in Sources */,
 			);

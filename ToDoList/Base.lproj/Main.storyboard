@@ -1,24 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Bfn-cd-swH">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tareas por hacer-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yrj-M7-dQA">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="oN6-QB-zrF">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="oN6-QB-zrF" firstAttribute="top" secondItem="qwJ-wI-6J7" secondAttribute="top" id="71N-W1-9Q6"/>
+                                    <constraint firstItem="oN6-QB-zrF" firstAttribute="height" secondItem="FjV-zv-UFj" secondAttribute="height" id="Fug-KW-kvR"/>
+                                    <constraint firstItem="oN6-QB-zrF" firstAttribute="width" secondItem="FjV-zv-UFj" secondAttribute="width" id="KQS-6H-eYN"/>
+                                    <constraint firstItem="oN6-QB-zrF" firstAttribute="bottom" secondItem="qwJ-wI-6J7" secondAttribute="bottom" id="SLd-Ub-wOB"/>
+                                    <constraint firstItem="oN6-QB-zrF" firstAttribute="trailing" secondItem="qwJ-wI-6J7" secondAttribute="trailing" id="dwx-Gd-heY"/>
+                                    <constraint firstItem="oN6-QB-zrF" firstAttribute="leading" secondItem="qwJ-wI-6J7" secondAttribute="leading" id="f9B-dt-BD4"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="qwJ-wI-6J7"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="FjV-zv-UFj"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="yrj-M7-dQA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="30k-Ez-bpf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yrj-M7-dQA" secondAttribute="bottom" id="Mwk-a6-aQj"/>
+                            <constraint firstItem="yrj-M7-dQA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="V7K-Za-xkL"/>
+                            <constraint firstItem="yrj-M7-dQA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="q5Y-eI-w89"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Tareas por hacer" id="cIc-Yb-jYi">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="jGz-1M-9dO">
+                            <connections>
+                                <action selector="willAdd:" destination="BYZ-38-t0r" id="hOW-CV-oVh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="scListTask" destination="yrj-M7-dQA" id="GGD-I8-vSi"/>
+                        <outlet property="svListTask" destination="oN6-QB-zrF" id="dB7-bg-PPb"/>
+                        <segue destination="XSz-Fx-DGm" kind="show" identifier="sgTaskform" id="qCi-Xo-1i6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="918.84057971014499" y="138.61607142857142"/>
+        </scene>
+        <!--Tarea-->
+        <scene sceneID="D7g-WL-dvS">
+            <objects>
+                <viewController id="XSz-Fx-DGm" customClass="TaskViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="diN-Fw-E4L">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Escribe el detalle de la tarea" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yEG-eO-kIS">
+                                <rect key="frame" x="41.5" y="431" width="331" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rnW-yC-JwJ">
+                                <rect key="frame" x="41.5" y="505" width="331" height="34"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Add Task">
+                                    <color key="titleColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="save:" destination="XSz-Fx-DGm" eventType="touchUpInside" id="ghx-uK-Y6c"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="yEG-eO-kIS" firstAttribute="height" secondItem="diN-Fw-E4L" secondAttribute="height" multiplier="0.0379464" id="8JX-Uh-Jwo"/>
+                            <constraint firstItem="yEG-eO-kIS" firstAttribute="centerX" secondItem="diN-Fw-E4L" secondAttribute="centerX" id="A9i-ii-MLN"/>
+                            <constraint firstItem="yEG-eO-kIS" firstAttribute="width" secondItem="diN-Fw-E4L" secondAttribute="width" multiplier="8/10" id="Okf-YN-Af7"/>
+                            <constraint firstItem="rnW-yC-JwJ" firstAttribute="height" secondItem="yEG-eO-kIS" secondAttribute="height" id="W7g-ko-5Xv"/>
+                            <constraint firstItem="rnW-yC-JwJ" firstAttribute="top" secondItem="yEG-eO-kIS" secondAttribute="bottom" constant="40" id="jes-VA-2GK"/>
+                            <constraint firstItem="rnW-yC-JwJ" firstAttribute="width" secondItem="yEG-eO-kIS" secondAttribute="width" id="kyV-km-JRv"/>
+                            <constraint firstItem="rnW-yC-JwJ" firstAttribute="centerX" secondItem="diN-Fw-E4L" secondAttribute="centerX" id="lY3-5I-Iaq"/>
+                            <constraint firstItem="yEG-eO-kIS" firstAttribute="centerY" secondItem="diN-Fw-E4L" secondAttribute="centerY" id="rbd-ja-fbJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JaX-If-ahp"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tarea" id="Dzx-x4-Udc"/>
+                    <connections>
+                        <outlet property="tf_name" destination="yEG-eO-kIS" id="8iJ-3y-jl6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WUg-iL-XQ7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1700" y="139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LeH-Hs-HLv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bfn-cd-swH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZGD-j1-9pk">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="5m4-jq-6T3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pv1-qd-h0s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
         </scene>
     </scenes>
 </document>
